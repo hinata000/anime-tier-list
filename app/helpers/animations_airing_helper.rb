@@ -1,2 +1,0 @@
-module AnimationsAiringHelper
-end

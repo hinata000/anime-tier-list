@@ -1,4 +1,4 @@
-class AnimationsAiringController < ApplicationController
+class AnimationsController < ApplicationController
   require 'date'
   def index
     today = Date.today
@@ -13,6 +13,10 @@ class AnimationsAiringController < ApplicationController
       today_season = 3
     end
 
-    @animations_airing = Animation.where(season: today_season, year: today.year)
+    @animations = Animation.where(season: today_season, year: today.year)
+  end
+
+  def show
+    @animations = Animation.where(id: params[:id])
   end
 end
