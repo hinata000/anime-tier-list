@@ -1,4 +1,11 @@
 <% @animations.each do |animation| %>
-  <%= animation.title %>
+<% @animations_detail.each do |animation_detail| %>
+  <h2><%= animation.title %></h2>
   <img src="<%= animation.image %>" alt="">
+  <p><%= animation.season_name_text %></p>
+  <a href="https://twitter.com/<%= animation.twitter_username %>">Twitter</a>
+  <a href="<%= animation.official_site_url %>">公式サイト</a>
+  <p><%= animation_detail.staffs %></p>
+  <p><%= animation_detail.casts %></p>
+<% end %>
 <% end %>
