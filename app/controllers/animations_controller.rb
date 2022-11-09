@@ -18,5 +18,6 @@ class AnimationsController < ApplicationController
 
   def show
     @animations = Animation.where(id: params[:id])
+    @animations_detail = AnimationDetail.where(animation_id: params[:id])
   end
 end
