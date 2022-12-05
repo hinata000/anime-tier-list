@@ -1,5 +1,26 @@
-<% @animations.each do |animation| %>
-  <p><%= animation.id %></p>
-  <h2><%= animation.title %></h2>
-  <img src="<%= animation.image %>" alt="">
-<% end %>
+<div class="bg-white py-6 sm:py-8 lg:py-12">
+  <div class="max-w-screen-2xl px-4 md:px-8 mx-auto">
+    <!-- text - start -->
+    <div class="mb-10 md:mb-16">
+      <h2 class="text-gray-800 text-2xl lg:text-3xl font-bold mb-4 md:mb-6 pl-4">現在放送中のアニメ</h2>
+    </div>
+    <!-- text - end -->
+
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+      <% @animations.each do |animation| %>
+        <!-- product - start -->
+        <div>
+          <%= link_to image_tag(animation.image, class: "w-full h-full object-cover object-center group-hover:scale-110 transition duration-200", alt: animation.title), "/animations/#{animation.id}", class: "group h-44 block bg-gray-100 rounded-t-lg overflow-hidden relative" %>
+
+          <div class="flex justify-between items-start bg-gray-100 rounded-b-lg gap-2 p-4">
+            <div class="flex flex-col">
+              <span class="text-gray-500 text-sm lg:text-base">スコア</span>
+              <%= link_to animation.title.truncate(18), "/animations/#{animation.id}", class: "text-gray-800 hover:text-gray-500 lg:text-lg font-semibold transition duration-100" %>
+            </div>
+          </div>
+        </div>
+        <% end %>
+        <!-- product - end -->
+    </div>
+  </div>
+</div>
