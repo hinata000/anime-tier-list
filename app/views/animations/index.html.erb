@@ -10,8 +10,11 @@
       <% @animations.each do |animation| %>
         <!-- product - start -->
         <div>
-          <%= link_to image_tag(animation.image, class: "w-full h-full object-cover object-center group-hover:scale-110 transition duration-200", alt: animation.title), "/animations/#{animation.id}", class: "group h-44 block bg-gray-100 rounded-t-lg overflow-hidden relative" %>
-
+          <% if animation.image.present? %>
+            <%= link_to image_tag(animation.image, class: "w-full h-full object-cover object-center group-hover:scale-110 transition duration-200", alt: animation.title), "/animations/#{animation.id}", class: "group h-44 block bg-gray-100 rounded-t-lg overflow-hidden relative" %>
+          <% else %>
+            <%= link_to image_tag("1560031.jpg", class: "w-full h-full object-cover object-center group-hover:scale-110 transition duration-200", alt: animation.title), "/animations/#{animation.id}", class: "group h-44 block bg-gray-100 rounded-t-lg overflow-hidden relative" %>
+          <% end %>
           <div class="flex justify-between items-start bg-gray-100 rounded-b-lg gap-2 p-4">
             <div class="flex flex-col">
               <span class="text-gray-500 text-sm lg:text-base">スコア</span>
