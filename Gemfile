@@ -51,9 +51,13 @@ gem "bootsnap", require: false
 gem 'faraday'
 gem 'syobocal'
 gem 'dotenv-rails'
+gem 'tailwindcss-rails', '~> 2.0'
 
 #検索機能
 gem 'ransack'
+
+#ログイン機能
+gem 'devise'
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
@@ -77,5 +81,3 @@ group :test do
   gem "selenium-webdriver"
   gem "webdrivers"
 end
-
-gem "tailwindcss-rails", "~> 2.0"
